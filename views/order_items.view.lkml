@@ -61,6 +61,35 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+  parameter: sale_price_metric_picker {
+    description: "Use with the Sale Price Metric measure"
+    type: unquoted
+    allowed_value: {
+      label: "Total Sale Price"
+      value: "SUM"
+    }
+    allowed_value: {
+      label: "Average Sale Price"
+      value: "AVG"
+    }
+    allowed_value: {
+      label: "Maximum Sale Price"
+      value: "MAX"
+    }
+    allowed_value: {
+      label: "Minimum Sale Price"
+      value: "MIN"
+    }
+  }
+
+  measure: sale_price_metric {
+    description: "Use with the Sale Price Metric Picker filter-only field"
+    type: number
+    label_from_parameter: sale_price_metric_picker
+    sql: {% parameter sale_price_metric_picker %}(${sale_price}) ;;
+    value_format_name: usd
+  }
+
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.

@@ -30,10 +30,7 @@ view: salary {
     sql: ${salary} ;;
   }
 
-  measure: average_salary {
-    type: average
-    sql: ${salary} ;;
-  }
+
 
   measure: count {
     type: count

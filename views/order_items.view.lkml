@@ -61,6 +61,11 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+  dimension: 2X {
+    type: number
+    sql: ${sale_price}*2 ;;
+  }
+
   parameter: sale_price_metric_picker {
     description: "Use with the Sale Price Metric measure"
     type: unquoted

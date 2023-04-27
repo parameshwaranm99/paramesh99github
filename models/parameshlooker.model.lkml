@@ -128,6 +128,11 @@ explore: orders {
 }
 
 explore: order_items {
+
+  access_filter: {
+    field: products.category
+    user_attribute: category_param
+  }
   join: orders {
     type: left_outer
     sql_on: ${order_items.order_id} = ${orders.id} ;;

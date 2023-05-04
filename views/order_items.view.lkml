@@ -102,6 +102,17 @@ view: order_items {
   measure: total_sale_price {
     type: sum
     sql: ${sale_price} ;;
+    html:
+    {% if value <1000 %}
+    <p style="color: black; background-color: lightgreen;">{{ value }}</p>
+    {% elsif value <3000 %}
+    <p style="color: black; background-color: orange;">{{ value }}</p>
+    {% elsif value >5000 %}
+    <p style="color: white; background-color: red;">{{ value }}</p>
+    {% else %}
+    <p style="color: white; background-color: green;">{{ value }}</p>
+    {% endif %}
+    ;;
   }
 
   measure: average_sale_price {

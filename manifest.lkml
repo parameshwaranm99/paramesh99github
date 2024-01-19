@@ -1,4 +1,4 @@
-project_name: "parameshlooker_23_4"
+project_name: "par_test"
 
 # # Use local_dependency: To enable referencing of another project
 # # on this instance with include: statements
